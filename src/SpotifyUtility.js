@@ -121,7 +121,35 @@ const mockTracks =  [
 
   {
     "album": {
-      "album_type": "single",
+      "album_type": "album",
+      "total_tracks": 11,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/02nO8sjDUtPC1tPsKMdSPg"
+      },
+      "href": "https://api.spotify.com/v1/albums/02nO8sjDUtPC1tPsKMdSPg",
+      "id": "02nO8sjDUtPC1tPsKMdSPg",
+      "images": [
+        {
+          "url": "https://i.scdn.co/image/ab67616d0000b273540529493d164c2ad599dc5a",
+          "height": 640,
+          "width": 640
+        },
+        {
+          "url": "https://i.scdn.co/image/ab67616d00001e02540529493d164c2ad599dc5a",
+          "height": 300,
+          "width": 300
+        },
+        {
+          "url": "https://i.scdn.co/image/ab67616d00004851540529493d164c2ad599dc5a",
+          "height": 64,
+          "width": 64
+        }
+      ],
+      "name": "Recently",
+      "release_date": "2023-09-29",
+      "release_date_precision": "day",
+      "type": "album",
+      "uri": "spotify:album:02nO8sjDUtPC1tPsKMdSPg",
       "artists": [
         {
           "external_urls": {
@@ -134,35 +162,7 @@ const mockTracks =  [
           "uri": "spotify:artist:6JVRYNneRsYNInT4TNr5vU"
         }
       ],
-      "external_urls": {
-        "spotify": "https://open.spotify.com/album/6KA9lwr59rUbozIGETLR1a"
-      },
-      "href": "https://api.spotify.com/v1/albums/6KA9lwr59rUbozIGETLR1a",
-      "id": "6KA9lwr59rUbozIGETLR1a",
-      "images": [
-        {
-          "height": 640,
-          "url": "https://i.scdn.co/image/ab67616d0000b273730cc7c42a8771d153e4951a",
-          "width": 640
-        },
-        {
-          "height": 300,
-          "url": "https://i.scdn.co/image/ab67616d00001e02730cc7c42a8771d153e4951a",
-          "width": 300
-        },
-        {
-          "height": 64,
-          "url": "https://i.scdn.co/image/ab67616d00004851730cc7c42a8771d153e4951a",
-          "width": 64
-        }
-      ],
-      "is_playable": true,
-      "name": "Necessary",
-      "release_date": "2023-01-20",
-      "release_date_precision": "day",
-      "total_tracks": 1,
-      "type": "album",
-      "uri": "spotify:album:6KA9lwr59rUbozIGETLR1a"
+      "is_playable": true
     },
     "artists": [
       {
@@ -183,18 +183,18 @@ const mockTracks =  [
       "isrc": "TCAGS2383365"
     },
     "external_urls": {
-      "spotify": "https://open.spotify.com/track/6ya5t4IUDVhMf4gKsFsWlS"
+      "spotify": "https://open.spotify.com/track/3t3ODgYtBj1aeaVCtPkDae"
     },
-    "href": "https://api.spotify.com/v1/tracks/6ya5t4IUDVhMf4gKsFsWlS",
-    "id": "6ya5t4IUDVhMf4gKsFsWlS",
-    "is_local": false,
+    "href": "https://api.spotify.com/v1/tracks/3t3ODgYtBj1aeaVCtPkDae",
+    "id": "3t3ODgYtBj1aeaVCtPkDae",
     "is_playable": true,
     "name": "Necessary",
-    "popularity": 20,
+    "popularity": 22,
     "preview_url": "https://p.scdn.co/mp3-preview/bb1a1041eb042b1f6d93f11d8c4f857c0873a3d9?cid=9d88f3c46f004f499e101b9b631dd77d",
-    "track_number": 1,
+    "track_number": 11,
     "type": "track",
-    "uri": "spotify:track:6ya5t4IUDVhMf4gKsFsWlS"
+    "uri": "spotify:track:3t3ODgYtBj1aeaVCtPkDae",
+    "is_local": false
   }
 ]
 

@@ -2,30 +2,34 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 
 import Track from './Track';
+import mockTracks from '../SpotifyUtility';
 
-describe('track elements', () => {
+describe('Track component', () => {
+    const track = mockTracks[1];
+
     beforeEach(() => {
         render(<Track />);
       });
-      
-    screen.debug();
 
-    it('render Song Title', async () => {
-        const songTitle = await screen.getByText(/Song Title/);
+    it('renders Song Title', async () => {
+        const songTitle = await screen.getByText(track.name);
         expect(songTitle).toBeInTheDocument();
     });
+
     it('render Artist Name', async () => {
-        const artist = await screen.getByText('Artist Name');
+        const artist = await screen.getByText(track.artists[0].name);
         expect(artist).toBeInTheDocument();
     });
 
-    it('render Album name', async () => {
-        const album = await screen.getByText('Album');
+    it('renders Album name', async () => {
+        const album = await screen.getByText(track.album.name);
         expect(album).toBeInTheDocument();
     });
 
-    it('render track duration', async () => {
-        const trackDuration = await screen.getByText('duration');
+    it('renders track duration', async () => {
+        const trackDuration = await screen.getByText(track.duration_ms);
         expect(trackDuration).toBeInTheDocument();
     });
+    
+
 });
