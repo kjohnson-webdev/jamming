@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { getByTestId, render, screen } from '@testing-library/react';
+import App from './App.js';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+describe('Full app', () => {
+  beforeEach(() => {
+    render(<App />)
+  });
+
+  it('renders the Search Bar', async () => {
+    const jamming = await screen.getByText('Jamming');
+    expect(jamming).toBeInTheDocument();
+  });
 });
