@@ -5,7 +5,7 @@ function Track({ name, artist, album, duration }) {
         <div>
             <h3>{name}</h3>
             <p><span>{artist}</span> | <span>{album}</span></p>
-            <p>{duration}</p>
+            <p data-testid="duration">{duration}</p>
         </div>
     );
 };
