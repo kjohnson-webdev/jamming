@@ -6,7 +6,7 @@ import Playlist from './Playlist';
 describe('Playlist element', () => {
     beforeEach(() => {
         render(<Playlist />);
-    })
+    });
 
     it('renders header', async () => {
         const header = await screen.findByText('Playlist');

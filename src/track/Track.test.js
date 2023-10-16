@@ -8,7 +8,12 @@ describe('Track component', () => {
     const track = mockTracks[1];
 
     beforeEach(() => {
-        render(<Track />);
+        render(<Track 
+            name={track.name}
+            artist={track.artists[0].name}
+            album={track.album.name}
+            duration={track.duration_ms}
+        />);
       });
 
     it('renders Song Title', async () => {

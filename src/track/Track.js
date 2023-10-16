@@ -1,13 +1,11 @@
 import React from 'react';
-import mockTracks from '../SpotifyUtility';
 
-function Track(props) {
-    const track = mockTracks[1];
+function Track({ name, artist, album, duration }) {
     return (
         <div>
-            <h3>{track.name}</h3>
-            <p><span>{track.artists[0].name}</span> | <span>{track.album.name}</span></p>
-            <p>{track.duration_ms}</p>
+            <h3>{name}</h3>
+            <p><span>{artist}</span> | <span>{album}</span></p>
+            <p>{duration}</p>
         </div>
     );
 };

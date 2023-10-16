@@ -1,12 +1,12 @@
 import React from 'react';
-import Track from '../track/Track';
+import Tracklist from '../tracklist/Tracklist';
 
 function SearchResults(props) {
     return (
         <div>
             <h2>Search Results</h2>      
             <div className="resultsTracklist">
-                <Track />
+                <Tracklist />
             </div>
         </div>
     
