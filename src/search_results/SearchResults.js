@@ -4,7 +4,7 @@ import Track from '../track/Track';
 function SearchResults(props) {
     return (
         <div>
-            <h1>Search Results</h1>      
+            <h2>Search Results</h2>      
             <div className="resultsTracklist">
                 <Track />
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import mockTracks from '../SpotifyUtility';
 
-function Track() {
+function Track(props) {
     const track = mockTracks[1];
     return (
         <div>
