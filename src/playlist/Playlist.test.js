@@ -6,7 +6,7 @@ import mockTracks from '../SpotifyUtility';
 
 describe('Playlist element', () => {
     beforeEach(() => {
-        render(<Playlist playlistTracks={mockTracks} />);
+        render(<Playlist playlistTracks={mockTracks} playlistName="Sample Playlist Name"/>);
     });
 
     it('renders header', async () => {

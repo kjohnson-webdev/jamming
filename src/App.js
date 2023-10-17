@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import './App.css';
 import SearchBar from './search_bar/SearchBar';
 import SearchResults from './search_results/SearchResults';
@@ -12,6 +12,8 @@ function App() {
   const [trackCount, setTrackCount] = useState(0);
   const [playlistDuration, setPlaylistDuration] = useState("0:00");
 
+  console.log(`Playlist name in App.js is ${playlistName}`)
+
   return (
     <div>
       <h1>Jamming</h1>
@@ -21,7 +23,11 @@ function App() {
       </SearchBar>
       <div>
         <SearchResults searchResults={searchResults} />
-        <Playlist playlistTracks={playlistTracks} />
+        <Playlist 
+          playlistTracks={playlistTracks}
+          playlistName={playlistName}
+          setPlaylistName={setPlaylistName} 
+        />
       </div>
     </div>
   );
