@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 
 function SearchBar(props) {
-    const [term, setTerm] = useState("");
+    const [term, setTerm] = useState("search term");
 
     const handleTermChange = useCallback((event) => {
         setTerm(event.target.value);

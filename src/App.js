@@ -12,7 +12,7 @@ function App() {
   const [trackCount, setTrackCount] = useState(0);
   const [playlistDuration, setPlaylistDuration] = useState("0:00");
 
-  // console.log(`searchResults in App: ${searchResults}
+  console.log(`searchResults in App: ${searchResults}
   // mockTrack is: ${mockTracks}`);
 
   return (

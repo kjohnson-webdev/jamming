@@ -195,6 +195,18 @@ const mockTracks =  [
     "type": "track",
     "uri": "spotify:track:3t3ODgYtBj1aeaVCtPkDae",
     "is_local": false
+  },
+
+  {
+    "album": {
+      "name": 'sample album'
+    },
+    "artists": [
+      {"name": 'sample artist'}
+    ],
+    "id": '00000',
+    "name": "sample trackname",
+    "duration_ms": 300000
   }
 ];
 

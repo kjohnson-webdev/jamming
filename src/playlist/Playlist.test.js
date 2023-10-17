@@ -2,10 +2,11 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 
 import Playlist from './Playlist';
+import mockTracks from '../SpotifyUtility';
 
 describe('Playlist element', () => {
     beforeEach(() => {
-        render(<Playlist />);
+        render(<Playlist playlistTracks={mockTracks} />);
     });
 
     it('renders header', async () => {

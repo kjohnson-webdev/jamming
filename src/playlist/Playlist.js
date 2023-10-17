@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist( {playlistTracks }) {
+function Playlist( {playlistTracks} ) {
 
     return (
         <div>

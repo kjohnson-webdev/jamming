@@ -6,7 +6,7 @@ import mockTracks from '../SpotifyUtility';
 
 describe('tracklist', () => {
     beforeEach(() => {
-        render(<Tracklist />);
+        render(<Tracklist tracks={mockTracks}/>);
     });
 
     it('renders Track components with formatted duration', async () => {
