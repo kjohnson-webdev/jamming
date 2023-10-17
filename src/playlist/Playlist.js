@@ -2,12 +2,12 @@ import React from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist() {
+function Playlist(props) {
     return (
         <div>
             <h2>Playlist</h2>
             <input placeholder="New Playlist" /><button>Save to Spotify</button>
-            <Tracklist />
+            <Tracklist tracks={props.playlistTracks} />
         </div>
     )
 }

@@ -7,11 +7,6 @@ import mockTracks from '../SpotifyUtility';
 describe('tracklist', () => {
     beforeEach(() => {
         render(<Tracklist />);
-    })
-
-
-    it('renders a heading', () => {
-        expect(screen.getByText('Tracklist')).toBeInTheDocument();
     });
 
     it('renders Track components with formatted duration', () => {

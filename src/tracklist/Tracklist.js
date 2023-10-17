@@ -1,20 +1,19 @@
 import React from 'react';
 import Track from '../track/Track';
-import mockTracks from '../SpotifyUtility';
 
-function Tracklist() {
-    const tracks = mockTracks;
-
+function Tracklist(props) {
+    //format track duration from ms to mm:ss
     function formatDuration(duration_ms) {
         const minutes = Math.floor((duration_ms/1000)/60);
         const seconds = Math.floor((duration_ms/1000) % 60);
         return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
-    }
+    };
+
+    console.log(props.tracks);
 
     return (
         <div>
-            <h2>Tracklist</h2>
-            {mockTracks.map((track) => (
+            {props.tracks.map((track) => (
                 <Track 
                     key={track.id}
                     name={track.name}
@@ -25,6 +24,6 @@ function Tracklist() {
             ))}
         </div>
     )
-}
+};
 
 export default Tracklist;

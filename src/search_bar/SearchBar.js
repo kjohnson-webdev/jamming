@@ -1,14 +1,26 @@
-import * as React from 'react';
+import React, { useState, useCallback } from 'react';
 
-function SearchBar({ value, onChange, children}) {
+function SearchBar(props) {
+    const [term, setTerm] = useState("");
+
+    const handleTermChange = useCallback((event) => {
+        setTerm(event.target.value);
+    }, []);
+
+    console.log(`The search is for: ${term}`);
+
+    const search = useCallback((event) => {
+        props.onSearch(term);
+    }, [term, props.onSearch]);
+
     return (
         <>  
-            <label htmlFor='search'>{children}</label>      
+            <label htmlFor='search'>{props.children}</label>      
             <input 
                 id='search'
                 type='text'
-                value={value} 
-                onChange={onChange}
+                value={props.value} 
+                onChange={props.onChange}
             />
             <button>Go</button>
         </>
