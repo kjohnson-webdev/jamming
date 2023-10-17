@@ -196,6 +196,6 @@ const mockTracks =  [
     "uri": "spotify:track:3t3ODgYtBj1aeaVCtPkDae",
     "is_local": false
   }
-]
+];
 
-export default mockTracks;
+export default mockTracks; 

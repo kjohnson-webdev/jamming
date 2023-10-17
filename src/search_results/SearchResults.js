@@ -1,15 +1,15 @@
 import React from 'react';
 import Tracklist from '../tracklist/Tracklist';
 
-function SearchResults(props) {
+function SearchResults( {searchResults} ) {
 
-    console.log(props.tracks);
+    console.log(`In SearchResults tracks = ${searchResults}`)
 
     return (
         <div>
             <h2>Search Results</h2>      
             <div className="resultsTracklist">
-                <Tracklist tracks={props.searchResults} />
+                <Tracklist tracks={searchResults} />
             </div>
         </div>
     

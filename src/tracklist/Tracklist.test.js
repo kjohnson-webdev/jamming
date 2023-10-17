@@ -9,8 +9,8 @@ describe('tracklist', () => {
         render(<Tracklist />);
     });
 
-    it('renders Track components with formatted duration', () => {
-        const trackDurations = screen.getAllByTestId("duration");
+    it('renders Track components with formatted duration', async () => {
+        const trackDurations = await screen.getAllByTestId("duration");
 
         trackDurations.forEach((trackDuration, index) => {
             const track = mockTracks[index];

@@ -5,7 +5,8 @@ import SearchResults from './SearchResults';
 
 describe('renders to screen', () => {
     render(<SearchResults />);
-    it('renders heading', () => {
-        expect(screen.getByText('Search Results')).toBeInTheDocument();
+    it('renders heading', async () => {
+        const searchResults = await screen.getByText('Search Results');
+        expect(searchResults).toBeInTheDocument();
     });
 });

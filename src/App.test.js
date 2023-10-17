@@ -1,4 +1,4 @@
-import { getByTestId, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App.js';
 
 
@@ -7,7 +7,7 @@ describe('Full app', () => {
     render(<App />)
   });
 
-  it('renders the Search Bar', async () => {
+  it('renders app name', async () => {
     const jamming = await screen.getByText('Jamming');
     expect(jamming).toBeInTheDocument();
   });

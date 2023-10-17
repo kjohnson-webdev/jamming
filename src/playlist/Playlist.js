@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist(props) {
+function Playlist( {playlistTracks }) {
+
     return (
         <div>
             <h2>Playlist</h2>
             <input placeholder="New Playlist" /><button>Save to Spotify</button>
-            <Tracklist tracks={props.playlistTracks} />
+            <Tracklist tracks={playlistTracks} />
         </div>
     )
 }

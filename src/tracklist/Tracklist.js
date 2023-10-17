@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Track from '../track/Track';
 
-function Tracklist(props) {
+function Tracklist({tracks}) {
     //format track duration from ms to mm:ss
     function formatDuration(duration_ms) {
         const minutes = Math.floor((duration_ms/1000)/60);
@@ -9,11 +9,11 @@ function Tracklist(props) {
         return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
     };
 
-    console.log(props.tracks);
+    console.log(`tracks in Tracklist: ${tracks}`);
 
     return (
         <div>
-            {props.tracks.map((track) => (
+            {tracks.map((track) => (
                 <Track 
                     key={track.id}
                     name={track.name}
