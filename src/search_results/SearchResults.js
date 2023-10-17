@@ -3,8 +3,6 @@ import Tracklist from '../tracklist/Tracklist';
 
 function SearchResults( {searchResults} ) {
 
-    console.log(`In SearchResults tracks = ${searchResults}`)
-
     return (
         <div>
             <h2>Search Results</h2>      

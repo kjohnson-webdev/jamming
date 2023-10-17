@@ -7,8 +7,6 @@ function SearchBar(props) {
         setTerm(event.target.value);
     }, []);
 
-    console.log(`The search is for: ${term}`);
-
     const search = useCallback((event) => {
         props.onSearch(term);
     }, [term, props.onSearch]);

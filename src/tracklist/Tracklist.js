@@ -9,9 +9,6 @@ function Tracklist( {tracks} ) {
         return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
     };
 
-    console.log(`tracks in Tracklist: ${tracks}`);
-
-
     return (
         <div>
             {tracks.map((track) => (
