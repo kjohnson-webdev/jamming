@@ -14,8 +14,10 @@ function App() {
 
   const addTrack = useCallback(
     (track) => {
+      if (playlistTracks.some((savedTrack) => track.id === savedTrack.id))
+        return;
       setPlaylistTracks((prevTracks) => [...prevTracks, track])
-  })
+  });
 
   return (
     <div>
