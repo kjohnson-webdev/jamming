@@ -15,7 +15,7 @@ describe('Playlist element', () => {
     });
 
     it('renders save button', async () => {
-        const saveButton = await screen.findByRole('button');
+        const saveButton = await screen.findByText(/Save/);
         expect(saveButton).toBeInTheDocument();
     });
 });

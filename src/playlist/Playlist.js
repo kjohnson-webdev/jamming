@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist( {playlistTracks, playlistName, setPlaylistName} ) {
+function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack} ) {
     const handleNameChange = useCallback((event) => {
         setPlaylistName(event.target.value);
     }, [setPlaylistName]);
@@ -17,7 +17,12 @@ function Playlist( {playlistTracks, playlistName, setPlaylistName} ) {
                 onChange={handleNameChange}
             />
             <button>Save to Spotify</button>
-            <Tracklist tracks={playlistTracks} />
+            <Tracklist 
+                tracks={playlistTracks}
+                //set isInPlaylist to "true" when tracklist is rendered through Playlist
+                isInPlaylist={true}
+                addTrack={addTrack}
+             />
         </div>
     )
 }

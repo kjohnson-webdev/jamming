@@ -1,13 +1,17 @@
 import React from 'react';
 import Tracklist from '../tracklist/Tracklist';
 
-function SearchResults( {searchResults} ) {
+function SearchResults( props ) {
 
     return (
         <div>
             <h2>Search Results</h2>      
             <div className="resultsTracklist">
-                <Tracklist tracks={searchResults} />
+                <Tracklist 
+                    tracks={props.searchResults} 
+                    addTrack={props.addTrack}
+                    isInPlaylist={props.isInPlaylist}
+                />
             </div>
         </div>
     

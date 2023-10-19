@@ -12,21 +12,30 @@ function App() {
   const [trackCount, setTrackCount] = useState(0);
   const [playlistDuration, setPlaylistDuration] = useState("0:00");
 
-  console.log(`Playlist name in App.js is ${playlistName}`)
+  const addTrack = useCallback(
+    (track) => {
+      setPlaylistTracks((prevTracks) => [...prevTracks, track])
+  })
 
   return (
     <div>
       <h1>Jamming</h1>
       <h2>Create a Spotify Playlist</h2>
-      <SearchBar data-testid="search-bar" >
+      <SearchBar 
+        data-testid="search-bar" 
+      >
         Search:
       </SearchBar>
       <div>
-        <SearchResults searchResults={searchResults} />
+        <SearchResults 
+          searchResults={searchResults} 
+          addTrack={addTrack}
+        />
         <Playlist 
           playlistTracks={playlistTracks}
           playlistName={playlistName}
           setPlaylistName={setPlaylistName} 
+          addTrack={addTrack}
         />
       </div>
     </div>
