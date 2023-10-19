@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Track({ name, artist, album, duration, isInPlaylist, addTrack }) {
+function Track({ name, artist, album, duration, isInPlaylist, addTrack, removeTrack }) {
 
 
     const renderAction = () => {
         if (isInPlaylist) {
             return (
-                <button className="Track-action">
+                <button className="Track-action" onClick={removeTrack}>
                     -
                 </button>
             );

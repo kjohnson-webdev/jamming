@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack} ) {
+function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack, removeTrack} ) {
     const handleNameChange = useCallback((event) => {
         setPlaylistName(event.target.value);
     }, [setPlaylistName]);
@@ -22,6 +22,7 @@ function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack} ) {
                 //set isInPlaylist to "true" when tracklist is rendered through Playlist
                 isInPlaylist={true}
                 addTrack={addTrack}
+                removeTrack={removeTrack}
              />
         </div>
     )

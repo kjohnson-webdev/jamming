@@ -11,6 +11,7 @@ function SearchResults( props ) {
                     tracks={props.searchResults} 
                     addTrack={props.addTrack}
                     isInPlaylist={props.isInPlaylist}
+                    removeTrack={props.removeTrack}
                 />
             </div>
         </div>

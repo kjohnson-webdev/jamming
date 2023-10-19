@@ -19,6 +19,12 @@ function App() {
       setPlaylistTracks((prevTracks) => [...prevTracks, track])
   });
 
+  const removeTrack = useCallback(
+    (track) => {
+      setPlaylistTracks((prevTrack) => playlistTracks.filter((prevTrack) => prevTrack.id !== track.id))
+    }
+  )
+
   return (
     <div>
       <h1>Jamming</h1>
@@ -38,6 +44,7 @@ function App() {
           playlistName={playlistName}
           setPlaylistName={setPlaylistName} 
           addTrack={addTrack}
+          removeTrack={removeTrack}
         />
       </div>
     </div>

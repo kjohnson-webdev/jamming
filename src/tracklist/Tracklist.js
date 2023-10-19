@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Track from '../track/Track';
 
-function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack } ) {
+function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack, removeTrack } ) {
     //format track duration from ms to mm:ss
     function formatDuration(duration_ms) {
         const minutes = Math.floor((duration_ms/1000)/60);
@@ -21,6 +21,7 @@ function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack } ) {
                     duration={formatDuration(track.duration_ms)}
                     isInPlaylist={isInPlaylist}
                     addTrack={() => addTrack(track)}
+                    removeTrack={() => removeTrack(track)}
                 />
             ))}
         </div>
