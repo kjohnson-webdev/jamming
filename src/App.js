@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import SearchBar from './search_bar/SearchBar';
 import SearchResults from './search_results/SearchResults';
@@ -25,6 +25,16 @@ function App() {
     }
   )
 
+  const savePlaylist = useCallback(() => {
+    const playlistUris = playlistTracks.map((track) => track.uri);
+  })
+
+  useEffect(() => {
+    setTrackCount(playlistTracks.length);
+  }, 
+  [playlistTracks]
+  )
+
   return (
     <div>
       <h1>Jamming</h1>
@@ -45,6 +55,8 @@ function App() {
           setPlaylistName={setPlaylistName} 
           addTrack={addTrack}
           removeTrack={removeTrack}
+          savePlaylist={savePlaylist}
+          trackCount={trackCount}
         />
       </div>
     </div>

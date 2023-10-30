@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import Tracklist from '../tracklist/Tracklist';
 
-function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack, removeTrack} ) {
+function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack, removeTrack, savePlaylist, trackCount } ) {
     const handleNameChange = useCallback((event) => {
         setPlaylistName(event.target.value);
     }, [setPlaylistName]);
@@ -16,7 +16,8 @@ function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack, rem
                 value={playlistName}
                 onChange={handleNameChange}
             />
-            <button>Save to Spotify</button>
+            <button onClick={savePlaylist}>Save to Spotify</button>
+            <p>{trackCount} song{trackCount > 1 ? "s" : ""}</p>
             <Tracklist 
                 tracks={playlistTracks}
                 //set isInPlaylist to "true" when tracklist is rendered through Playlist

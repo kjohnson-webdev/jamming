@@ -1,4 +1,10 @@
 import React from 'react';
+const clientId = "81c34909a2fe417e990ab7a7980ac9dc";
+
+
+function Spotify() {
+
+}
 
 const mockTracks =  [
     {

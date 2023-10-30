@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Track from '../track/Track';
 
-function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack, removeTrack } ) {
+function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack, removeTrack, } ) {
     //format track duration from ms to mm:ss
     function formatDuration(duration_ms) {
         const minutes = Math.floor((duration_ms/1000)/60);
