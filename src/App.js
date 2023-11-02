@@ -27,11 +27,16 @@ function App() {
   )
 
   const savePlaylist = useCallback(() => {
+    if (playlistTracks.length === 0 ) {
+      alert('add tracks to the playlist first!');
+      return
+    } else {
     const playlistUris = playlistTracks.map((track) => track.uri);
     console.log(playlistUris);
     alert(`Playlist saved with ${playlistUris.length} track(s)
     ${playlistUris}`);
     return playlistUris;
+    }
   }, [playlistTracks]);
 
   useEffect(() => {
