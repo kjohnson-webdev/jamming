@@ -212,7 +212,8 @@ const mockTracks =  [
     ],
     "id": '00000',
     "name": "sample trackname",
-    "duration_ms": 300000
+    "duration_ms": 300000,
+    "uri": "xxx",
   }
 ];
 

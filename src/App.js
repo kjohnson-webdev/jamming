@@ -10,7 +10,8 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState(mockPlaylist);
   const [playlistName, setPlaylistName] = useState("");
   const [trackCount, setTrackCount] = useState(0);
-  const [playlistDuration, setPlaylistDuration] = useState("0:00");
+  // Out of scope for now
+  // const [playlistDuration, setPlaylistDuration] = useState("0:00");
 
   const addTrack = useCallback(
     (track) => {
@@ -27,7 +28,11 @@ function App() {
 
   const savePlaylist = useCallback(() => {
     const playlistUris = playlistTracks.map((track) => track.uri);
-  })
+    console.log(playlistUris);
+    alert(`Playlist saved with ${playlistUris.length} track(s)
+    ${playlistUris}`);
+    return playlistUris;
+  }, [playlistTracks]);
 
   useEffect(() => {
     setTrackCount(playlistTracks.length);

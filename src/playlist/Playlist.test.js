@@ -2,6 +2,7 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 
 import Playlist from './Playlist';
+import App from '../App';
 import mockTracks from '../SpotifyUtility';
 
 describe('Playlist element', () => {

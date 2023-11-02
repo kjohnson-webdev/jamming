@@ -16,7 +16,11 @@ function Playlist( {playlistTracks, playlistName, setPlaylistName, addTrack, rem
                 value={playlistName}
                 onChange={handleNameChange}
             />
-            <button onClick={savePlaylist}>Save to Spotify</button>
+            <button 
+                onClick={savePlaylist}
+                className="savePlaylistBtn">
+                Save to Spotify
+            </button>
             <p>{trackCount} song{trackCount > 1 ? "s" : ""}</p>
             <Tracklist 
                 tracks={playlistTracks}
