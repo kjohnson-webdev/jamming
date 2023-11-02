@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react';
 
 import Playlist from './Playlist';
 import App from '../App';
-import mockTracks from '../SpotifyUtility';
+import mockTracks from '../mockTracks';
 
 describe('Playlist element', () => {
     beforeEach(() => {

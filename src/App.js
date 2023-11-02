@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from './search_bar/SearchBar';
 import SearchResults from './search_results/SearchResults';
 import Playlist from './playlist/Playlist';
-import mockTracks, { mockPlaylist } from './SpotifyUtility';
+import mockTracks, { mockPlaylist } from './mockTracks';
 
 function App() {
   const [searchResults, setSearchResults] = useState(mockTracks);
@@ -27,17 +27,20 @@ function App() {
   )
 
   const savePlaylist = useCallback(() => {
-    if (playlistTracks.length === 0 ) {
+    if (trackCount === 0) {
       alert('add tracks to the playlist first!');
+      return
+    } else if (playlistName === "") {
+      alert("name your playlist first!")
       return
     } else {
     const playlistUris = playlistTracks.map((track) => track.uri);
     console.log(playlistUris);
-    alert(`Playlist saved with ${playlistUris.length} track(s)
+    alert(`${playlistName} saved with ${playlistUris.length} track(s)
     ${playlistUris}`);
     return playlistUris;
     }
-  }, [playlistTracks]);
+  }, [trackCount, playlistName]);
 
   useEffect(() => {
     setTrackCount(playlistTracks.length);
