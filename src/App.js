@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './search_bar/SearchBar';
 import SearchResults from './search_results/SearchResults';
 import Playlist from './playlist/Playlist';
+import Spotify from './SpotifyUtility';
 import mockTracks, { mockPlaylist } from './mockTracks';
 
 function App() {
@@ -52,6 +53,9 @@ function App() {
     <div>
       <h1>Jamming</h1>
       <h2>Create a Spotify Playlist</h2>
+      <Spotify>
+        
+      </Spotify>
       <SearchBar 
         data-testid="search-bar" 
       >
