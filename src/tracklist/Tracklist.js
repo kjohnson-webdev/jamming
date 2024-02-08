@@ -16,7 +16,7 @@ function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack, removeTrac
                 <Track 
                     key={track.id}
                     name={track.name}
-                    artist={track.artists[0].name}
+                    artist={track.artist}
                     album={track.album.name}
                     duration={formatDuration(track.duration_ms)}
                     // isInPlaylist={isInPlaylist(track.id)}
