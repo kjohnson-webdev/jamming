@@ -19,7 +19,7 @@ function Tracklist( { tracks, playlistTracks, isInPlaylist, addTrack, removeTrac
                     artist={track.artists[0].name}
                     album={track.album.name}
                     duration={formatDuration(track.duration_ms)}
-                    isInPlaylist={isInPlaylist}
+                    // isInPlaylist={isInPlaylist(track.id)}
                     addTrack={() => addTrack(track)}
                     removeTrack={() => removeTrack(track)}
                 />

@@ -8,11 +8,49 @@ import mockTracks, { mockPlaylist } from './mockTracks';
 
 function App() {
   const [searchResults, setSearchResults] = useState(mockTracks);
-  const [playlistTracks, setPlaylistTracks] = useState(mockPlaylist);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
   const [playlistName, setPlaylistName] = useState("");
   const [trackCount, setTrackCount] = useState(0);
+  const [accessToken, setAccessToken] = useState(null);
   // Out of scope for now
   // const [playlistDuration, setPlaylistDuration] = useState("0:00");
+
+  const isInPlaylist = (trackId) => {
+    return playlistTracks.some(playlistTrack => playlistTrack.id === trackId);
+  }
+
+  const onSearch = async (term) => {
+    if (!accessToken) {
+      alert('Please log in to Spotify');
+      return;
+    }
+    const headers = { Authorization: `Bearer ${accessToken}`};
+
+    try {
+      const response = await fetch(`https://api.spotify.com/v1/search?type=track&q=${encodeURIComponent(term)}`, { headers });
+      const jsonResponse = await response.json();
+
+      if (!jsonResponse.tracks) {
+        setSearchResults([]);
+        return;
+      };
+
+      const tracks = jsonResponse.tracks.items.map(track => ({
+        key: track.id,
+        name: track.name,
+        artist: track.artists[0].name,
+        album: track.album.name,
+        uri: track.uri,
+        duration: track.duration_ms
+      }));
+
+      setSearchResults(tracks);
+      console.log(searchResults);
+    } catch (error) {
+      console.error('Error fetching tracks from Spotify:', error);
+      setSearchResults([]);
+    }
+  };
 
   const addTrack = useCallback(
     (track) => {
@@ -53,11 +91,14 @@ function App() {
     <div>
       <h1>Jamming</h1>
       <h2>Create a Spotify Playlist</h2>
-      <Spotify>
-        
-      </Spotify>
+      <Spotify 
+        accessToken={accessToken} 
+        setAccessToken={setAccessToken} 
+      />
+
       <SearchBar 
         data-testid="search-bar" 
+        onSearch={onSearch}
       >
         Search:
       </SearchBar>
@@ -65,6 +106,7 @@ function App() {
         <SearchResults 
           searchResults={searchResults} 
           addTrack={addTrack}
+          isInPlaylist={isInPlaylist}
         />
         <Playlist 
           playlistTracks={playlistTracks}
@@ -74,6 +116,7 @@ function App() {
           removeTrack={removeTrack}
           savePlaylist={savePlaylist}
           trackCount={trackCount}
+          isInPlaylist={isInPlaylist}
         />
       </div>
     </div>
